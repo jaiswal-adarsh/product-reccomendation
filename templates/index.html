@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Product Recommender System</title>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous">
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white text-lg" href="#">🏪 Flipkart</a>>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/recommend">Recommend</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/simiprod">Like Users</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class>
+      <h3 class="text-black my-4 text-center" style="font-size:40px">Top 10
+        Products</h3>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-start my-3">
+        {% for i in range(product_name|length) %}
+        <div class="col-md-3" style="margin-top:50px">
+          <div class="card ">
+            <div class="card-body ">
+              <img class="card-img-top" src="{{ image[i][0] }}" width="100"
+                ,height="50">
+              <h6 class="text-black">{{ product_name[i] }}</h6>
+              <h6 class="text-black">Price - {{ retail_price[i] }} ❌</h6>
+              <h6 class="text-black">Discount - {{ discounted_price[i] }}</h6>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+
+                    <button type="button" class="btn btn-primary btn-sm">Buy Now</button>
+                  </div>
+                  <div class="col">
+
+                    <button type="button" class="btn btn-warning btn-sm">Add
+                      Cart</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="col card mx-2">
+            One of three columns
+          </div>
+          <div class="col card mx-2">
+            One of three columns
+          </div>
+          <div class="col card mx-2">
+            One of three columns
+          </div>
+          <div class="col card mx-2">
+            One of three columns
+          </div> -->
+      </div>
+    </body>
+  </html>
